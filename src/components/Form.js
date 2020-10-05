@@ -17,7 +17,9 @@ class Form extends React.Component {
                        onChange={(e) => {
                            this.setState({cityName: e.target.value, isEmpty: false})
                        }}/>
-                <button className="weatherapp__button" disabled={this.state.isEmpty} onClick={() => {
+                <button className="weatherapp__button"
+                        disabled={this.state.isEmpty}
+                        onClick={() => {
                     this.props.getWeather(this.state.cityName)
                     this.setState({cityName: '', isEmpty: true})
 
