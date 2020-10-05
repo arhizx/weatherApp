@@ -3,28 +3,24 @@ import './Form.scss'
 
 class Form extends React.Component {
 
-    state = {cityName: ''}
-
-    submitHandle = (e) => {
-        e.preventDefault()
-        if (this.state.cityName === '') return false
-    }
+    state = {cityName: '', isEmpty: true}
 
 
     render() {
-
         return (
-            <form className="weatherapp__form" onSubmit={this.submitHandle}>
+            <form className="weatherapp__form" onSubmit={(e)=>{e.preventDefault()}}>
                 <h1 className="weatherapp__header">Weather App</h1>
                 <input className="weatherapp__input"
                        type="text" placeholder="city"
+
                        value={this.state.cityName}
                        onChange={(e) => {
-                           this.setState({cityName: e.target.value})
+                           this.setState({cityName: e.target.value, isEmpty: false})
                        }}/>
-                <button className="weatherapp__button" onClick={() => {
+                <button className="weatherapp__button" disabled={this.state.isEmpty} onClick={() => {
                     this.props.getWeather(this.state.cityName)
-                    this.setState({cityName: ''})
+                    this.setState({cityName: '', isEmpty: true})
+
                 }}>
                     Submit
                 </button>
