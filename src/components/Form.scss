@@ -1,0 +1,33 @@
+.weatherapp__form {
+  font-family: Dialog, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px 0 15px;
+
+  .weatherapp__header {
+    font-size: 3em;
+
+    font-weight: bold;
+    margin-bottom: 10px;;
+  }
+
+  .weatherapp__input {
+    height: 30px;
+    border-radius: 3px;
+    font-size: 20px;
+
+  }
+
+  .weatherapp__button {
+    font-weight: 700;
+    width: 50%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid pink;
+
+  }
+
+}
+
