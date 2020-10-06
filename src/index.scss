@@ -1,9 +1,10 @@
 #root {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   height: inherit;
-  width: inherit;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(12,80,235,1) 100%);
 }
 
 /*RESET*/
@@ -19,7 +20,7 @@
   box-sizing: border-box;
 }
 
-:focus, :active {
+input:focus {
   outline: none;
 }
 

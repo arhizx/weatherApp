@@ -29,7 +29,6 @@ class Form extends React.Component {
                         onClick={() => {
                             this.props.getWeather(this.state.cityName)
                             this.setState({cityName: '', isEmpty: true})
-
                         }}>
                     Submit
                 </button>

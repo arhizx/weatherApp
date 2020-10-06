@@ -8,18 +8,17 @@ class Weather extends React.Component {
         feelsLike: '',
         pressure: '',
         windSpeed: '',
-        weatherType: '',
-        error: ''
+        weatherType: ''
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate = (prevProps) => {
         if (this.props.weather !== prevProps.weather) {
             this.setState({
                 city: this.props.weather[1],
                 temperature: `${Math.floor(this.props.weather[0].temp)} °C `,
                 feelsLike: ` ${Math.floor(this.props.weather[0].feels_like)} °C`,
                 pressure: ` ${Math.floor(this.props.weather[0].pressure * 0.75)} mm Hg`,
-                windSpeed: ` ${this.props.weather[3].speed} km/h`,
+                windSpeed: `Wind: ${this.props.weather[3].speed} km/h`,
                 weatherType: this.props.weather[2][0].main
             })
         }
@@ -27,6 +26,7 @@ class Weather extends React.Component {
 
 
     render() {
+
         return (
             <div className="weatherapp__result">
                 <div className="weatherapp__weather">

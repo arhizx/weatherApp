@@ -1,8 +1,9 @@
 .weatherapp__result {
-  font-family: Dialog, sans-serif;
-  margin-top: 20px;
+  font-family: inherit;
+  margin: auto;
 
   p {
     margin: 5px 0 5px 0;
+    text-align: center;
   }
 }
