@@ -11,7 +11,7 @@ class Weather extends React.Component {
         weatherType: ''
     }
 
-    componentDidUpdate = (prevProps) => {
+    componentDidUpdate = prevProps => {
         if (this.props.weather !== prevProps.weather) {
             this.setState({
                 city: this.props.weather[1],
