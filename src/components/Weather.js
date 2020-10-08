@@ -25,7 +25,7 @@ class Weather extends React.Component {
   };
 
   render() {
-    return <Result weather={this.state} />;
+    return <Result weatherResult={this.state} />;
   }
 }
 
