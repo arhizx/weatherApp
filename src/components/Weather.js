@@ -1,5 +1,5 @@
 import React from "react";
-import "./Weather.scss";
+import Result from "./Result";
 
 class Weather extends React.Component {
   state = {
@@ -25,17 +25,7 @@ class Weather extends React.Component {
   };
 
   render() {
-    return (
-      <div className="weatherapp__result">
-        <div className="weatherapp__weather">
-          <p className="weatherapp__city">{this.state.city}</p>
-          <p className="weatherapp__temperature">{this.state.temperature}</p>
-          <p className="weatherapp__pressure">{this.state.pressure}</p>
-          <p className="weatherapp__windSpeed">{this.state.windSpeed}</p>
-          <p className="weatherapp__weatherType">{this.state.weatherType}</p>
-        </div>
-      </div>
-    );
+    return <Result weather={this.state} />;
   }
 }
 

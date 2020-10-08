@@ -11,14 +11,14 @@ class Form extends React.Component {
   render() {
     return (
       <form
-        className="weatherapp__form"
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <h1 className="weatherapp__header">Weather App</h1>
+        <h1 className="form__header">Weather App</h1>
         <input
-          className="weatherapp__input"
+          className="form__input"
           type="text"
           placeholder="city"
           value={this.state.cityName}
@@ -30,7 +30,7 @@ class Form extends React.Component {
           }}
         />
         <button
-          className="weatherapp__button"
+          className="form__button"
           disabled={this.state.isEmpty}
           onClick={() => {
             this.props.getWeather(this.state.cityName);
