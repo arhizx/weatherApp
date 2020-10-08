@@ -1,4 +1,3 @@
-
 .weatherapp__form {
   font-family: inherit;
   display: flex;
@@ -32,8 +31,6 @@
     -webkit-box-shadow: 3px 2.5px 8px 0 rgba(5, 0, 0, 1);
     -moz-box-shadow: 3px 2.5px 8px 0 rgba(5, 0, 0, 1);
     box-shadow: 3px 2.5px 8px 0 rgba(5, 0, 0, 1);
-
-
   }
 
   .weatherapp__button:hover {
@@ -42,7 +39,6 @@
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
   }
-
 }
 
 @keyframes text-button {
