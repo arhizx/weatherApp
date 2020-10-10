@@ -1,28 +1,28 @@
-.weatherapp__form {
+.form {
   font-family: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 15px 0 15px;
-  margin-top: 2em;
+  padding: 0 15px;
+  margin-top: 25px;
 
-  .weatherapp__header {
-    font-size: 3em;
+  &__header {
+    font-size: 45px;
     font-weight: bold;
-    margin-bottom: 1em;
+    margin-bottom: 40px;
   }
 
-  .weatherapp__input {
+  &__input {
     height: 30px;
-    border-radius: 2em;
+    border-radius: 20px;
     font-size: 20px;
     margin-bottom: 10px;
-    padding-left: 0.5em;
+    padding-left: 10px;
     border: 1px solid hotpink;
   }
 
-  .weatherapp__button {
+  &__button {
     font-weight: 700;
     width: 50%;
     height: 40px;
@@ -33,7 +33,7 @@
     box-shadow: 3px 2.5px 8px 0 rgba(5, 0, 0, 1);
   }
 
-  .weatherapp__button:hover {
+  &__button:hover {
     animation-name: text-button;
     animation-duration: 1s;
     animation-iteration-count: 1;

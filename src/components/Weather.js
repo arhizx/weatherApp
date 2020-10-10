@@ -1,42 +1,36 @@
-import React from "react";
-import "./Weather.scss";
+import React from 'react'
+import Result from './Result'
 
 class Weather extends React.Component {
-  state = {
-    city: "",
-    temperature: "",
-    feelsLike: "",
-    pressure: "",
-    windSpeed: "",
-    weatherType: "",
-  };
-
-  componentDidUpdate = (prevProps) => {
-    if (this.props.weather !== prevProps.weather) {
-      this.setState({
-        city: this.props.weather[1],
-        temperature: `${Math.floor(this.props.weather[0].temp)} °C `,
-        feelsLike: ` ${Math.floor(this.props.weather[0].feels_like)} °C`,
-        pressure: ` ${Math.floor(this.props.weather[0].pressure * 0.75)} mm Hg`,
-        windSpeed: `Wind: ${this.props.weather[3].speed} km/h`,
-        weatherType: this.props.weather[2][0].main,
-      });
+    state = {
+        city: '',
+        temperature: '',
+        feelsLike: '',
+        pressure: '',
+        windSpeed: '',
+        weatherType: '',
     }
-  };
 
-  render() {
-    return (
-      <div className="weatherapp__result">
-        <div className="weatherapp__weather">
-          <p className="weatherapp__city">{this.state.city}</p>
-          <p className="weatherapp__temperature">{this.state.temperature}</p>
-          <p className="weatherapp__pressure">{this.state.pressure}</p>
-          <p className="weatherapp__windSpeed">{this.state.windSpeed}</p>
-          <p className="weatherapp__weatherType">{this.state.weatherType}</p>
-        </div>
-      </div>
-    );
-  }
+    componentDidUpdate = (prevProps) => {
+        if (this.props.weather !== prevProps.weather) {
+            const { weather } = this.props
+            const weatherResult = {
+                city: weather[1],
+                temperature: `${Math.floor(weather[0].temp)} °C `,
+                feelsLike: ` ${Math.floor(weather[0].feels_like)} °C`,
+                pressure: ` ${Math.floor(weather[0].pressure * 0.75)} mm Hg`,
+                windSpeed: `Wind: ${weather[3].speed} km/h`,
+                weatherType: weather[2][0].main,
+            }
+            this.setState({ weatherResult })
+        }
+    }
+
+    render() {
+        const { weatherResult } = this.state
+
+        return <Result weatherResult={weatherResult} />
+    }
 }
 
-export default Weather;
+export default Weather
