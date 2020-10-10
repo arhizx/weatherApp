@@ -9,6 +9,7 @@ class Weather extends React.Component {
         pressure: '',
         windSpeed: '',
         weatherType: '',
+        weatherResult: null,
     }
 
     componentDidUpdate = (prevProps) => {
