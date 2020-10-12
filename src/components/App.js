@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.scss'
 import Form from './Form'
-import Weather from './Weather'
+
 import { fetchWeather } from '../HTTP'
+import Result from './Result'
 
 class App extends React.Component {
     state = {
@@ -27,7 +28,7 @@ class App extends React.Component {
         let res = this.state.err ? (
             <p>Not Found</p>
         ) : (
-            <Weather weather={this.state.weather} />
+            <Result weather={this.state.weather} />
         )
 
         return (
