@@ -25,16 +25,12 @@ class App extends React.Component {
     }
 
     render() {
-        let res = this.state.err ? (
-            <p>Not Found</p>
-        ) : (
-            <Result weather={this.state.weather} />
-        )
+        const { err, weather } = this.state
 
         return (
             <div className="app">
                 <Form onFetchWeather={this.handleFetchWeather} />
-                {res}
+                {err ? <p>Not found</p> : <Result weather={weather} />}
             </div>
         )
     }

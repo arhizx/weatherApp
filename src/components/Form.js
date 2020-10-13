@@ -2,10 +2,15 @@ import React from 'react'
 import './Form.scss'
 
 class Form extends React.Component {
-    state = { cityName: '', isEmpty: true }
+    state = { cityName: '' }
 
     componentDidMount() {
         this.input.focus()
+    }
+
+    handleSubmit = () => {
+        this.props.onFetchWeather(this.state.cityName)
+        this.setState({ cityName: '' })
     }
 
     render() {
@@ -34,11 +39,8 @@ class Form extends React.Component {
                 />
                 <button
                     className="form__button"
-                    disabled={this.state.isEmpty}
-                    onClick={() => {
-                        this.props.onFetchWeather(this.state.cityName)
-                        this.setState({ cityName: '', isEmpty: true })
-                    }}
+                    disabled={!this.state.cityName}
+                    onClick={this.handleSubmit}
                 >
                     Submit
                 </button>
